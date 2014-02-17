@@ -473,7 +473,7 @@ class NfsDriver(RemoteFsDriver):
         target_share = None
         target_share_reserved = 0
 
-	random.shuffle(self._mounted_shares)
+        random.shuffle(self._mounted_shares)
 
         for nfs_share in self._mounted_shares:
             if not self._is_share_eligible(nfs_share, volume_size_in_gib):
@@ -482,7 +482,7 @@ class NfsDriver(RemoteFsDriver):
                 self._get_capacity_info(nfs_share)
             if target_share is not None:
                 if target_share_reserved > total_allocated \
-		    and target_share_reserved > (total_size/2):
+                    and target_share_reserved > (total_size/2):
                     target_share = nfs_share
                     target_share_reserved = total_allocated
             else:
